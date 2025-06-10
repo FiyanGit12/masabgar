@@ -1,0 +1,320 @@
+/* Floating elements */
+.floating-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-dot {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ff6b35;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(255,107,53,0.6);
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+        transform: translateY(-20px) rotate(180deg); 
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background: 
+        linear-gradient(rgba(0,255,255,0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,0.2) 1px, transparent 1px),
+        radial-gradient(circle at 30% 70%, rgba(255,0,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(0,255,128,0.1) 0%, transparent 50%),
+        linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #2d1b69 100%);
+    background-size: 60px 60px, 60px 60px, 100% 100%, 100% 100%, 100% 100%;
+    animation: bodyNeonPulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes bodyNeonPulse {
+    0% {
+        background: 
+            linear-gradient(rgba(0,255,255,0.15) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,255,255,0.15) 1px, transparent 1px),
+            radial-gradient(circle at 30% 70%, rgba(255,0,255,0.08) 0%, transparent 50%),
+            radial-gradient(circle at 70% 30%, rgba(0,255,128,0.08) 0%, transparent 50%),
+            linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #2d1b69 100%);
+        background-size: 60px 60px, 60px 60px, 100% 100%, 100% 100%, 100% 100%;
+    }
+    100% {
+        background: 
+            linear-gradient(rgba(0,255,255,0.4) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,255,255,0.4) 1px, transparent 1px),
+            radial-gradient(circle at 30% 70%, rgba(255,0,255,0.2) 0%, transparent 50%),
+            radial-gradient(circle at 70% 30%, rgba(0,255,128,0.2) 0%, transparent 50%),
+            linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #4d2b99 100%);
+        background-size: 60px 60px, 60px 60px, 100% 100%, 100% 100%, 100% 100%;
+    }
+}
+
+/* Overlay Grid untuk efek double */
+.neon-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(0,255,255,0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,0.3) 1px, transparent 1px);
+    background-size: 40px 40px, 40px 40px;
+    background-attachment: fixed;
+    background-repeat: repeat;
+    z-index: -1;
+    animation: gridPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes gridPulse {
+    0% {
+        background: 
+            linear-gradient(rgba(0,255,255,0.2) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,255,255,0.2) 1px, transparent 1px);
+    }
+    100% {
+        background: 
+            linear-gradient(rgba(0,255,255,0.5) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,255,255,0.5) 1px, transparent 1px);
+    }
+}
+
+/* Text */
+.text-container {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 20px 50px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #ffffff, #f0f8ff, #e6e6fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255,255,255,0.3);
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+            position: relative;
+            margin-top: -95px;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ffffff, transparent);
+            animation: underlineExpand 2s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 30px rgba(255,255,255,0.3); }
+            100% { text-shadow: 0 0 50px rgba(255,255,255,0.6); }
+        }
+
+        @keyframes underlineExpand {
+            0%, 100% { width: 100px; opacity: 0.7; }
+            50% { width: 150px; opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+.procedure-list {
+    list-style: none;
+    counter-reset: step-counter;
+    padding: 0;
+    margin: 0;
+}
+
+.procedure-list li {
+    counter-increment: step-counter;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, white 0%, #e6e6fa 100%);
+    border-left: 4px solid #3498db;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #2c3e50;
+    font-style: oblique;
+    font: bold;
+}
+
+.procedure-list li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 3px 15px rgba(52, 152, 219, 0.2);
+    background: linear-gradient(135deg, #ffffff 0%, #f1f3f4 100%);
+}
+
+.procedure-list li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: -15px;  
+    top: 50%;
+    transform: translateY(-50%);
+    background: #3498db;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.procedure-list li:nth-child(even) {
+    border-left-color: #764ba2;
+}
+
+.procedure-list li:nth-child(even)::before {
+    background: blueviolet;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+}
+
+.home-button {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    animation: fadeInUp 1s ease-out 1s both;
+    margin-top: -30px;
+}
+
+        button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: -10px;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        button:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .text-container h1 {
+        font-size: 2rem;
+    }
+    
+    .button {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .neon-grid {
+        background-size: 25px 25px, 25px 25px;
+    }
+    
+    body {
+        background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%, 100% 100%;
+    }
+    h1 {
+                font-size: 2.5rem;
+            }
+            
+            p {
+                font-size: 1rem;
+                padding: 20px;
+            }
+            
+            .text-container {
+                padding: 80px 15px 30px;
+            }
+}
+
+ @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+                margin-top: -50px;
+            }
+            
+            button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            .text-container{
+                margin-bottom: 30px;
+            }
+            p {
+                margin-top: 40px;
+            }
+            
+        }
+

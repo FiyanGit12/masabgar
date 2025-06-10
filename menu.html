@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - @masabgar</title>
+    <link rel="stylesheet" href="./menu.css">
+</head>
+<body>
+    <div class="neon-grid"></div>
+    <div class="floating-elements"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Menu Joki</h1>
+            <p>Order sesuai yang Anda butuhkan</p>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Menu Item 1 -->
+            <div class="menu-item">
+                <div class="poster-container">
+                    <img src="./bahan poster/pre-order.jpg" alt="Pre-order" class="poster" onclick="openModal(this)">
+                </div>
+                <div class="menu-content">
+                    <h3>Pre-Order Joki</h3>
+                    <p>Pre Order Joki season 37</p>
+                    <button class="contact-btn" onclick="contactOwner('Pre order joki')">
+                        <i class="icon">Order</i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menu Item 2 -->
+            <div class="menu-item">
+                <div class="poster-container">
+                    <img src="./bahan poster/1.jpg" alt="Joki Global" class="poster" onclick="openModal(this)">
+                </div>
+                <div class="menu-content">
+                    <h3>Joki Global</h3>
+                    <p>Role Exp Lane</p>
+                    <button class="contact-btn" onclick="contactOwner('Joki Global role exp')">
+                        <i class="icon">Order</i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menu Item 3 -->
+            <div class="menu-item">
+                <div class="poster-container">
+                    <img src="./bahan poster/2.jpg" alt="Joki Global" class="poster" onclick="openModal(this)">
+                </div>
+                <div class="menu-content">
+                    <h3>Joki Global</h3>
+                    <p>Role Gold Lane</p>
+                    <button class="contact-btn" onclick="contactOwner('Joki Global role gold')">
+                        <i class="icon">Order</i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menu Item 4 -->
+            <div class="menu-item">
+                <div class="poster-container">
+                    <img src="./bahan poster/3.jpg" alt="Joki Global" class="poster" onclick="openModal(this)">
+                </div>
+                <div class="menu-content">
+                    <h3>Joki Global</h3>
+                    <p>Role Mid Lane</p>
+                    <button class="contact-btn" onclick="contactOwner('Joki Global role mid')">
+                        <i class="icon">Order</i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menu Item 5 -->
+            <div class="menu-item">
+                <div class="poster-container">
+                    <img src="./bahan poster/4.jpg" alt="Joki Global" class="poster" onclick="openModal(this)">
+                </div>
+                <div class="menu-content">
+                    <h3>Joki Global</h3>
+                    <p>Role Jungle</p>
+                    <button class="contact-btn" onclick="contactOwner('Joki Global role jungle')">
+                        <i class="icon">Order</i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Menu Item 6 -->
+            <div class="menu-item">
+                <div class="poster-container">
+                    <img src="./bahan poster/5.jpg" alt="Joki Global" class="poster" onclick="openModal(this)">
+                </div>
+                <div class="menu-content">
+                    <h3>Joki Global</h3>
+                    <p>Role Roaming</p>
+                    <button class="contact-btn" onclick="contactOwner('Joki Global role roaming')">
+                        <i class="icon">Order</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-btn-container">
+            <a href="./index.html" class="back-btn">
+                <i class="icon">Back</i>
+            </a>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Enlarged Image">
+            <div class="modal-caption" id="modalCaption"></div>
+        </div>
+    </div>
+
+    <script src="./menu.js"></script>
+</body>
+</html>
